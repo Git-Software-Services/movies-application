@@ -24,6 +24,26 @@
       "title": "Bad Boys",
       "rating": "5",
       "id": 5
+    },
+    {
+      "title": "lion king",
+      "rasting": "5",
+      "id": 6
+    },
+    {
+      "title": "lion king",
+      "rating": 5,
+      "id": 7
+    },
+    {
+      "title": "ghostbusters",
+      "rating": 5,
+      "id": 8
+    },
+    {
+      "title": "lion king",
+      "rating": 4,
+      "id": 9
     }
   ]
 }

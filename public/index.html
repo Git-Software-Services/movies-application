@@ -6,16 +6,27 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+<div id="loading">
+    <img id="loading-image" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..." />
+</div>
 
+<h1 id="helloThere"></h1>
     <div class="container">
-        <h1 id="helloThere"></h1>
-        <p>To get started, edit <code>src/index.js</code>.</p>
     </div>
-    <div id="movie1"></div>
-    <div id="movie2"></div>
-    <div id="movie3"></div>
-    <div id="movie4"></div>
-    <div id="movie5"></div>
+<form id="form">Add New Movie
+    <br>
+    Movie Title:
+    <br>
+    <input type="text" id="movieTitle" name="movieTitle" >
+    <br>
+    Rating:
+    <br>
+    <input type="text" id="movieRating" name="rating">
+    <br>
+    <br>
+    <input type="submit" id="submit" value="Submit">
+</form>
+
 
 
     <script src="/main.js"></script>
