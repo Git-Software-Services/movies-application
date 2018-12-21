@@ -13,7 +13,7 @@
 <h1 id="helloThere"></h1>
     <div class="container">
     </div>
-<form id="form">Add New Movie
+<form id="addMovieForm">Add New Movie
     <br>
     Movie Title:
     <br>
@@ -24,9 +24,22 @@
     <input type="text" id="movieRating" name="rating">
     <br>
     <br>
-    <input type="submit" id="submit" value="Submit">
+    <button type="submit" id="submit">Submit</button>
+    <br>
+    <br>
 </form>
+<label for="editExistingMovie">Edit Existing movie?</label>
+<button id="editExistingMovie">Yes</button>
+<form id="editMovieForm">
+    <br>
+    Movie Title:
+    <select id="movieSelector">
 
+    </select>
+    <button id="edit">Edit</button>
+    <br>
+    <br>
+</form>
 
 
     <script src="/main.js"></script>

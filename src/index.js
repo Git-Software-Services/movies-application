@@ -13,9 +13,11 @@ import {getMovies} from './api.js';
 
 const renderMovies = () => {
     getMovies().then((movies) => {
+        $("#movieTitle").val("");
+        $("#movieRating").val("");
         $("#loading").css("display", "none");
-        $("#form").css("display", "block");
-        document.getElementById("helloThere").innerHTML = (sayHello("World!"));
+        $("#addMovieForm").css("display", "block");
+        $("#helloThere").html((sayHello("World!")));
         movies.forEach(({title, rating, id}) => {
             $(".container").append(`id#${id} - ${title} - rating: ${rating}<br>`);
         });
@@ -39,14 +41,33 @@ const addMovie =(movieTitle, movieRating) => {
         body: JSON.stringify(movieAdded),
     };
     fetch(url, options)
-        .then(renderMovies())
-        .catch(alert("Error"));
+        .then(renderMovies);
 };
 
-$("#submit").click(function (e) {
+$("#submit").click((e) => {
     e.preventDefault();
-    console.log($("#movieTitle").val() + " " + $("#movieRating").val())
     var movieTitle = $("#movieTitle").val();
-    var movieRating = parseFloat($("#movieRating").val());
+    var movieRating = $("#movieRating").val();
     addMovie(movieTitle, movieRating);
+    $("#loading").css("display", "block");
+    $("#addMovieForm").css("display", "none");
+    $("#helloThere").html("");
+    $(".container").html("");
+});
+
+$("#editExistingMovie").click(function (e) {
+        e.preventDefault();
+    getMovies().then((movies) => {
+        console.log(movies.length);
+        $("#editMovieForm").css("display", "block");
+        var total = "";
+        for (var i=0; i < movies.length; i++){
+            total += `<option>${movies[i].title}</option>`
+        };
+        console.log(total);
+         $("#movieSelector").append(total);
+        // movies.forEach(({title, rating, id}) => {
+        //     $(".container").append(`id#${id} - ${title} - rating: ${rating}<br>`);
+        // });
+    });
 });

@@ -9,6 +9,9 @@ html, body {
     /*text-align: center;*/
 /*}*/
 
-#form{
+#addMovieForm{
+    display: none;
+}
+#editMovieForm{
     display: none;
 }

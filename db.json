@@ -27,22 +27,22 @@
     },
     {
       "title": "lion king",
-      "rasting": "5",
+      "rating": "5",
       "id": 6
     },
     {
-      "title": "lion king",
-      "rating": 5,
+      "title": "big hero 6",
+      "rating": "5",
       "id": 7
     },
     {
-      "title": "ghostbusters",
-      "rating": 5,
+      "title": "lion king",
+      "rating": "5",
       "id": 8
     },
     {
-      "title": "lion king",
-      "rating": 4,
+      "title": "a",
+      "rating": "6",
       "id": 9
     }
   ]
