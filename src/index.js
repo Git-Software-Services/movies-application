@@ -70,4 +70,29 @@ $("#editExistingMovie").click(function (e) {
         //     $(".container").append(`id#${id} - ${title} - rating: ${rating}<br>`);
         // });
     });
+// Function that displays editable data for selected movie on click
+    $("#edit").click(function (e){
+        e.preventDefault();
+        var movieBeingEdited = $("#movieSelector :selected").text();
+        console.log(movieBeingEdited);
+        $("#updateMovieDiv").html("Movie Title:\n" +
+            "    <br>\n" +
+            "    <input type=\"text\" id=\"updateMovieTitle\" name=\"updateMovieTitle\">\n" +
+            "    <br>\n" +
+            "    Rating:\n" +
+            "    <br><input type=\"text\" id=\"updateMovieRating\" name=\"updateMovieRating\">\n" +
+            "    <br>\n" +
+            "    <br>\n" +
+            "    <button type=\"submit\" id=\"update\">Update</button>");
+        //Prefills the input with selected movie (rating defaults to 0 for now)
+        $("#updateMovieTitle").val(movieBeingEdited);
+        $("#updateMovieRating").val(0);
+        $("#editMovieForm").css("display", "none");
+    });
+    //Function to update html with edited data
+    $("#update").click(function (e){
+        e.preventDefault();
+
+
+    });
 });

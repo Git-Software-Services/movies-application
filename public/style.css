@@ -11,7 +11,10 @@ html, body {
 
 #addMovieForm{
     display: none;
+    padding-top: 15px;
 }
+
 #editMovieForm{
     display: none;
 }
+
