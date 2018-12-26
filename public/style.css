@@ -17,4 +17,8 @@ html, body {
 #editMovieForm{
     display: none;
 }
+#hideRating{
+    /*visibility: hidden;*/
+    /*display: none;*/
+}
 

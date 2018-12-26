@@ -2,7 +2,7 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "4",
+      "rating": "1",
       "id": 1
     },
     {
@@ -41,8 +41,8 @@
       "id": 8
     },
     {
-      "title": "a",
-      "rating": "6",
+      "title": "American Beauty",
+      "rating": "5",
       "id": 9
     },
     {
