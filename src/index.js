@@ -15,6 +15,7 @@ import {getMovies} from './api.js';
 const renderMovies = () => {
     //added the following line to erase current html before appending new html
     $(".container").html("");
+    // var input = $('<input type="button" value="Delete" />');
     getMovies().then((movies) => {
         $("#movieTitle").val("");
         $("#movieRating").val("");
@@ -22,7 +23,7 @@ const renderMovies = () => {
         $("#addMovieForm").css("display", "block");
         $("#helloThere").html((sayHello("World!")));
         movies.forEach(({title, rating, id}) => {
-            $(".container").append(`id#${id} - ${title} - rating: ${rating}<br>`);
+            $(".container").append(`<input type="button" value="X" class="deleteButton" id="id#${id}" /> id# ${id} - ${title} - rating: ${rating}<br>`);
         });
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.')
@@ -147,3 +148,5 @@ const editMovie =(movieBeingEdited, movieRating, movieId) => {
     fetch(url, options)
         .then(renderMovies);
 };
+
+
