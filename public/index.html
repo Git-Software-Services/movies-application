@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8" />
     <title>My Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+
+
+
 <div id="loading">
     <img id="loading-image" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..." />
 </div>
-
-<h1 id="helloThere"></h1>
-    <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 id="helloThere" class="display-4"></h1>
+            <p class="lead">The first ever personal movie rating app. Share your opinion about any movie with your social network.</p>
+        </div>
     </div>
-<form id="addMovieForm">Add New Movie
+
+    <div class="movieContainer"></div>
+
+<form id="addMovieForm" class="ml-3">Add New Movie
     <br>
     Movie Title:
     <br>
@@ -30,7 +39,7 @@
 </form>
 <label for="editExistingMovie">Would you like to edit an existing movie?</label>
 <button id="editExistingMovie">Yes</button>
-<form id="editMovieForm">
+<form id="editMovieForm" class="my-5">
     <br>
     Select Movie:
     <select id="movieSelector">
@@ -42,7 +51,9 @@
 </form>
     <div id="updateMovieDiv"></div>
 
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>-->
     <script src="/main.js"></script>
 </body>
 </html>
