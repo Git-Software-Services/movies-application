@@ -1,74 +1,54 @@
 {
   "movies": [
     {
-      "title": "What's Love Got to DO with It",
-      "rating": "4",
-      "id": 3
-    },
-    {
-      "title": "Dancing Goats",
-      "rating": "3",
-      "id": 4
-    },
-    {
-      "title": "Who's talking now",
-      "rating": "3",
-      "id": 6
-    },
-    {
-      "title": "Batman",
-      "rating": "4",
-      "id": 7
-    },
-    {
       "title": "Dark Knight Rises",
       "rating": "5",
-      "id": 8
-    },
-    {
-      "title": "Living Color",
-      "rating": "5",
-      "id": 9
+      "id": 1
     },
     {
       "title": "The Color Purple",
       "rating": "5",
-      "id": 10
-    },
-    {
-      "title": "The Birdcage",
-      "rating": "2",
-      "id": 11
+      "id": 3
     },
     {
       "title": "American Beauty",
       "rating": "5",
-      "id": 12
+      "id": 4
     },
     {
       "title": "Rosemary's Baby",
       "rating": "1",
-      "id": 13
+      "id": 5
     },
     {
-      "title": "Pi",
-      "rating": "5",
-      "id": 14
-    },
-    {
-      "title": "Dancing With the Stars",
+      "title": "Rampage",
       "rating": "2",
-      "id": 15
+      "id": 6
     },
     {
-      "title": "My Name is Sam",
-      "rating": "4",
-      "id": 16
+      "title": "Iron Man",
+      "rating": "5",
+      "id": 7
     },
     {
-      "title": "Drummer Boy",
+      "title": "Charlie Brown Christmas",
       "rating": "1",
-      "id": 17
+      "id": 8
+    },
+    {
+      "title": "Cinderella",
+      "rating": "5",
+      "id": 9
+    },
+    {
+      "title": "Truth or Dare",
+      "rating": "1",
+      "id": 10
+    },
+    {
+      "title": "Children of the Corn",
+      "rating": "1",
+      "id": 11
     }
   ]
 }

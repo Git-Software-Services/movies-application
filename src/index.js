@@ -257,7 +257,7 @@ const renderMovies = () => {
         $("#addMovieForm").css("display", "block");
         $("#helloThere").html((sayHello("World!")));
         movies.forEach(({title, rating, id}) => {
-            $(".container").append(`<input type="button" value="X" class="deleteButton" id="${id}" /> id#${id} - ${title} - rating: ${rating}<br>`);
+            $(".container").append(`<input type="button" value="X" class="deleteButton" id="${id}" />${title} - rating: ${rating}<br>`);
         });
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.')
@@ -390,11 +390,12 @@ $(document).on("click", ".deleteButton", function (e){
         for (var i=0; i < movies.length; i++){
                 console.log($(this).attr('id'));
                 console.log(movies[i].id);
-            if ($(this).attr('id') === movies[i].id.toString()){
                 var deleteMovieId = movies[i].id;
+            if ($(this).attr('id') === movies[i].id.toString()){
+                console.log('we have a winner');
                 var deleteMovieTitle = movies[i].title;
                 var deleteMovieRating = movies[i].rating;
-                console.log('whoah');
+                console.log(deleteMovieId);
                 deleteMovie(deleteMovieId, deleteMovieTitle, deleteMovieRating);
             };
         };
@@ -403,7 +404,8 @@ $(document).on("click", ".deleteButton", function (e){
 
 
 // Delete movie function
-const deleteMovie =(deleteMovieTitle, deleteMovieRating, deleteMovieId) => {
+const deleteMovie =(deleteMovieId, deleteMovieTitle, deleteMovieRating) => {
+    console.log(deleteMovieId);
     // const movieDeleted = {id: deleteMovieId, title: deleteMovieTitle, rating: deleteMovieRating};
     let url = `/api/movies/${deleteMovieId}`;
     console.log(url);
