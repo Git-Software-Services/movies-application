@@ -31,3 +31,29 @@ body {
 label {
     padding-top: 56px;
 }
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar {
+    background-color: #513F7A;
+}
+h3 {
+    color: #513F7A;
+}
+
+h1, .subtitle {
+    color: white;
+}
+
+.jumbotron {
+    background-image: url("./netflix.jpg");
+    repeat: no-repeat;
+    background-size: 100%;
+}
+.container-fluid.img-banner {
+    text-align:center;
+    background: rgba(78,65,120,.6);
+    margin:0;
+}

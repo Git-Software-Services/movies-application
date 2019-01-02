@@ -14,6 +14,13 @@ console.log(sayHello("yo!"));
  */
 import {getMovies} from './api.js';
 
+//Add username to jumbotron
+$('#addUser').click(function(e){
+    e.preventDefault();
+    var newUserName = $("#userNameInput").val();
+    $("#helloThere").html((sayHello(newUserName)));
+});
+
 //Function to render movies in HTML
 const renderMovies = () => {
     $(".movieContainer").html("");
@@ -22,7 +29,7 @@ const renderMovies = () => {
         $("#movieRating").val("");
         $("#loading").css("display", "none");
         $("#addMovieForm").css("display", "block");
-        $("#helloThere").html((sayHello("World!")));
+        $("#helloThere").html((sayHello("... Enter a username")));
         movies.forEach(({title, rating, id}) => {
             $(".movieContainer").append(`<li class="list-group-item">
 <button type="button" value="X" class="deleteButton btn btn-outline-danger" id="${id}"></button>
@@ -90,6 +97,8 @@ $("#editExistingMovie").click(function (e) {
     var movieId = "";
     $("#edit").click(function (e){
         e.preventDefault();
+        $('html, body').animate({scrollTop: $(document).height()}, 'slow');
+        $('movieInfoContainer')
         getMovies().then((movies) => {
             movieBeingEdited = $("#movieSelector :selected").text();
 
@@ -209,7 +218,8 @@ const addMovieInfo = (movieBeingEdited) => {
             console.log(data);
             var movieImg = data.results[0].poster_path;
             var movieOverview = data.results[0].overview;
-            $('.movieInfoContainer').html(`<p> ${movieOverview}</p>`);
+            var movieName = data.results[0].original_title;
+            $('.movieInfoContainer').html(`<p> ${movieName}: <br><br> ${movieOverview}</p>`);
             imgUrl = `https://image.tmdb.org/t/p/w500${movieImg}`;
             console.log(movieImg);
             console.log(imgUrl);

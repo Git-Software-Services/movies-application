@@ -13,10 +13,24 @@
     <div id="loading">
         <img id="loading-image" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..." />
     </div>
+
+    <nav class="navbar navbar-dark">
+        <a class="navbar-brand">DandZee Movie Application</a>
+        <form class="form-inline">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input id="userNameInput" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <button id="addUser" class="btn btn-outline-success my-2 my-sm-0" type="submit">Add User</button>
+            </div>
+        </form>
+    </nav>
+
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+        <div class="container-fluid img-banner">
             <h1 id="helloThere" class="display-4"></h1>
-            <p class="lead">The first ever personal movie rating app. Share your opinion about any movie with your social network.</p>
+            <p class="lead subtitle">Rate your personalized collection of movie favorites and share your collection with your social network.</p>
         </div>
     </div>
     <div class="container-fluid">
@@ -67,7 +81,7 @@
                         Favorite Movies
                     </div>
                     <ul class="list-group list-group-flush">
-    
+
                     </ul>
                 </div>
             </div>

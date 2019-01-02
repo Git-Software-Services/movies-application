@@ -16,11 +16,6 @@
       "id": 4
     },
     {
-      "title": "Rosemary's Baby",
-      "rating": "1",
-      "id": 5
-    },
-    {
       "title": "Rampage",
       "rating": "3",
       "id": 6
@@ -44,6 +39,16 @@
       "title": "Children of the Corn",
       "rating": "1",
       "id": 11
+    },
+    {
+      "title": "Charlies Angels",
+      "rating": "4",
+      "id": 12
+    },
+    {
+      "title": "Eat, Pray, Love",
+      "rating": "5",
+      "id": 13
     }
   ]
 }
