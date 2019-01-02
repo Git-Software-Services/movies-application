@@ -16,7 +16,7 @@ import {getMovies} from './api.js';
 
 //Function to render movies in HTML
 const renderMovies = () => {
-    $(".mmovieContainer").html("");
+    $(".movieContainer").html("");
     getMovies().then((movies) => {
         $("#movieTitle").val("");
         $("#movieRating").val("");
@@ -24,7 +24,10 @@ const renderMovies = () => {
         $("#addMovieForm").css("display", "block");
         $("#helloThere").html((sayHello("World!")));
         movies.forEach(({title, rating, id}) => {
-            $(".movieContainer").append(`<input type="button" value="X" class="deleteButton btn btn-outline-danger" id="${id}" />${title} - rating: ${rating}<br>`);
+            $(".movieContainer").append(`<li class="list-group-item">
+<button type="button" value="X" class="deleteButton btn btn-outline-danger" id="${id}"></button>
+${title} - rating: ${rating}
+</li>`);
         });
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.')
@@ -92,14 +95,10 @@ $("#editExistingMovie").click(function (e) {
 
             addMovieInfo(movieBeingEdited);
 
-            $("#updateMovieDiv").html("<br>Movie Title:\n" +
-                "    <br>\n" +
-                "    <input type=\"text\" id=\"updateMovieTitle\" name=\"updateMovieTitle\">\n" +
-                "    <br>\n" +
-                "    Rating:\n" +
-                "    <br><input type=\"text\" id=\"updateMovieRating\" name=\"updateMovieRating\">\n" +
-                "    <br>\n" +
-                "    <br>\n" +
+            $("#updateMovieDiv").html("Title:" +
+                "    <input type=\"text\" id=\"updateMovieTitle\" name=\"updateMovieTitle\">" +
+                "    Rating:" +
+                "    <input type=\"text\" id=\"updateMovieRating\" name=\"updateMovieRating\">" +
                 "    <button type=\"submit\" id=\"update\">Update</button>");
 
 
@@ -223,62 +222,3 @@ const addMovieInfo = (movieBeingEdited) => {
 };
 
 
-
-
-// function addMovieInfo(movieBeingEdited) {
-//
-//
-//     const API_TOKEN = '909446a614e303473b8ce209449992d9';
-//     var input = '';
-//     console.log(movieBeingEdited);
-//     var replacedMovie = movieBeingEdited.split(' ').join('+');
-//     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_TOKEN}&query=${replacedMovie}`
-//
-//     console.log(url);
-//
-//     const fetchOptions = {
-//         headers: {'Authorization': `token ${API_TOKEN}`}
-//     }
-// //Error checking function...
-//     const checkResponseForErrors = response => {
-//         // console.group('checkResponseForErrors')
-//         console.log(response)
-//         // console.groupEnd()
-//         if (response.status !== 200) {
-//             return Promise.reject(response);
-//         }
-//         return Promise.resolve(response);
-//     }
-// // Parse Response as Json...
-//     const parseResponseAsJson = response => {
-//         console.group('parseResponseAsJson')
-//         console.log(response)
-//         console.groupEnd()
-//         const jsonResponse = response.json();
-//         return jsonResponse;
-//     }
-//
-// //Log data function...
-//     function logData(data) {
-//         console.group('logData')
-//         console.log(data);
-//         console.groupEnd();
-//     }
-//
-// //fetch the Json function...
-//     function fetchJson(url) {
-//         console.log(movieBeingEdited);
-//         console.log(replacedMovie);
-//         return fetch(url, fetchOptions)
-//             .then(checkResponseForErrors)
-//             .then(parseResponseAsJson)
-//     }
-//
-// $('#update').click(function () {
-//     console.log(url)
-//     fetchJson(url)
-//         // .then(getSecondElement)
-//         // .then(getLastCommit)
-//         .then(logData);
-// });
-// }

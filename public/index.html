@@ -10,48 +10,74 @@
 
 
 
-<div id="loading">
-    <img id="loading-image" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..." />
-</div>
+    <div id="loading">
+        <img id="loading-image" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..." />
+    </div>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 id="helloThere" class="display-4"></h1>
             <p class="lead">The first ever personal movie rating app. Share your opinion about any movie with your social network.</p>
         </div>
     </div>
-<div class="container-fluid">
-    <div class="movieContainer d-inline-block col-4"></div>
-    <div class="movieInfoContainer d-inline-block col-7"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <form id="addMovieForm" class="d-inline-block col-7">
+                <div class="col-7">
+                    <h3>Add a New Movie</h3>
+                </div>
+                <div class="row">
+                Title:
+                <br>
+                <input type="text" id="movieTitle" name="movieTitle"class="mr-2" >
 
-<form id="addMovieForm" class="ml-3">Add New Movie
-    <br>
-    Movie Title:
-    <br>
-    <input type="text" id="movieTitle" name="movieTitle" >
-    <br>
-    Rating:
-    <br>
-    <input type="text" id="movieRating" name="rating">
-    <br>
-    <br>
-    <button type="submit" id="submit">Submit</button>
-    <br>
-    <br>
-</form>
-<label for="editExistingMovie">Would you like to edit an existing movie?</label>
-<button id="editExistingMovie">Yes</button>
-<form id="editMovieForm" class="my-5">
-    <br>
-    Select Movie:
-    <select id="movieSelector">
+                 Rating:
+                <br>
+                <input type="text" id="movieRating" name="rating">
+                <br>
+                <button type="submit" id="submit" class="d-inline-block">Submit</button>
+                </div>
+                <br>
+                <br>
+            </form>
+            <div class="row d-inline-block">
+                <div class="">
+                    <label for="editExistingMovie">Would you like to edit an existing movie?</label>
+                    <button id="editExistingMovie">Yes</button>
+                </div>
+                <form id="editMovieForm" class="row ">
+                    <br>
+                    Select Movie:
+                    <select id="movieSelector">
 
-    </select>
-    <button id="edit">Edit</button>
-    <br>
-    <br>
-</form>
-    <div id="updateMovieDiv"></div>
-</div>
+                    </select>
+                    <button id="edit">Edit</button>
+                    <br>
+                    <br>
+                </form>
+                <div id="updateMovieDiv"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="movieContainer d-inline-block col-4">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Favorite Movies
+                    </div>
+                    <ul class="list-group list-group-flush">
+    
+                    </ul>
+                </div>
+            </div>
+            <div class="movieInfoContainer d-inline-block col-7"></div>
+        </div>
+    </div>
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

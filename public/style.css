@@ -1,6 +1,9 @@
 html, body {
     height: 100%;
 }
+body {
+    margin: 1% 2%;
+}
 
 /*.container {*/
     /*position: relative;*/
@@ -25,4 +28,6 @@ html, body {
 .deleteButton {
     margin: 10px;
 }
-
+label {
+    padding-top: 56px;
+}
