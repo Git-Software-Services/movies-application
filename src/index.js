@@ -16,9 +16,7 @@ import {getMovies} from './api.js';
 
 //Function to render movies in HTML
 const renderMovies = () => {
-    //added the following line to erase current html before appending new html
     $(".mmovieContainer").html("");
-    // var input = $('<input type="button" value="Delete" />');
     getMovies().then((movies) => {
         $("#movieTitle").val("");
         $("#movieRating").val("");
@@ -91,6 +89,9 @@ $("#editExistingMovie").click(function (e) {
         e.preventDefault();
         getMovies().then((movies) => {
             movieBeingEdited = $("#movieSelector :selected").text();
+
+            addMovieInfo(movieBeingEdited);
+
             $("#updateMovieDiv").html("<br>Movie Title:\n" +
                 "    <br>\n" +
                 "    <input type=\"text\" id=\"updateMovieTitle\" name=\"updateMovieTitle\">\n" +
@@ -190,3 +191,94 @@ const deleteMovie =(deleteMovieId, deleteMovieTitle, deleteMovieRating) => {
 };
 
 
+
+
+// Function that adds movie info to HTML
+const addMovieInfo = (movieBeingEdited) => {
+    const API_TOKEN = '909446a614e303473b8ce209449992d9';
+    var imgUrl = '';
+    console.log(movieBeingEdited);
+    var replacedMovie = movieBeingEdited.split(' ').join('+');
+    var url = `https://api.themoviedb.org/3/search/movie?api_key=${API_TOKEN}&query=${replacedMovie}`
+
+    console.log(url);
+
+
+    fetch(url)
+        .then((response) => response.json())
+        .then(function(data){
+            console.log(data);
+            var movieImg = data.results[0].poster_path;
+            var movieOverview = data.results[0].overview;
+            $('.movieInfoContainer').html(`<p> ${movieOverview}</p>`);
+            imgUrl = `https://image.tmdb.org/t/p/w500${movieImg}`;
+            console.log(movieImg);
+            console.log(imgUrl);
+        });
+            fetch(imgUrl)
+                .then(function(movieImg){
+                    // console.log(data);
+                    $('.movieInfoContainer').append(`<img src="${imgUrl}" class="img-thumbnail float-right">`);
+                });
+};
+
+
+
+
+// function addMovieInfo(movieBeingEdited) {
+//
+//
+//     const API_TOKEN = '909446a614e303473b8ce209449992d9';
+//     var input = '';
+//     console.log(movieBeingEdited);
+//     var replacedMovie = movieBeingEdited.split(' ').join('+');
+//     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_TOKEN}&query=${replacedMovie}`
+//
+//     console.log(url);
+//
+//     const fetchOptions = {
+//         headers: {'Authorization': `token ${API_TOKEN}`}
+//     }
+// //Error checking function...
+//     const checkResponseForErrors = response => {
+//         // console.group('checkResponseForErrors')
+//         console.log(response)
+//         // console.groupEnd()
+//         if (response.status !== 200) {
+//             return Promise.reject(response);
+//         }
+//         return Promise.resolve(response);
+//     }
+// // Parse Response as Json...
+//     const parseResponseAsJson = response => {
+//         console.group('parseResponseAsJson')
+//         console.log(response)
+//         console.groupEnd()
+//         const jsonResponse = response.json();
+//         return jsonResponse;
+//     }
+//
+// //Log data function...
+//     function logData(data) {
+//         console.group('logData')
+//         console.log(data);
+//         console.groupEnd();
+//     }
+//
+// //fetch the Json function...
+//     function fetchJson(url) {
+//         console.log(movieBeingEdited);
+//         console.log(replacedMovie);
+//         return fetch(url, fetchOptions)
+//             .then(checkResponseForErrors)
+//             .then(parseResponseAsJson)
+//     }
+//
+// $('#update').click(function () {
+//     console.log(url)
+//     fetchJson(url)
+//         // .then(getSecondElement)
+//         // .then(getLastCommit)
+//         .then(logData);
+// });
+// }

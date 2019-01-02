@@ -1,13 +1,13 @@
 {
   "movies": [
     {
-      "title": "Dark Knight Rises",
+      "title": "The Dark Knight Rises",
       "rating": "5",
       "id": 1
     },
     {
       "title": "The Color Purple",
-      "rating": "5",
+      "rating": "4",
       "id": 3
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "title": "Rampage",
-      "rating": "2",
+      "rating": "3",
       "id": 6
     },
     {
       "title": "Iron Man",
-      "rating": "5",
+      "rating": "4",
       "id": 7
     },
     {
