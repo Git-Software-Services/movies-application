@@ -8,12 +8,6 @@
 </head>
 <body>
 
-
-
-    <div id="loading">
-        <img id="loading-image" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..." />
-    </div>
-
     <nav class="navbar navbar-dark">
         <a class="navbar-brand">DandZee Movie Application</a>
         <form class="form-inline">
@@ -22,7 +16,7 @@
                     <span class="input-group-text" id="basic-addon1">@</span>
                 </div>
                 <input id="userNameInput" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                <button id="addUser" class="btn btn-outline-success my-2 my-sm-0" type="submit">Add User</button>
+                <button id="addUser" class="btn btn-outline-warning my-2 my-sm-0" type="submit">Add User</button>
             </div>
         </form>
     </nav>
@@ -34,63 +28,73 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
-            <form id="addMovieForm" class="d-inline-block col-7">
-                <div class="col-7">
-                    <h3>Add a New Movie</h3>
-                </div>
-                <div class="row">
-                Title:
-                <br>
-                <input type="text" id="movieTitle" name="movieTitle"class="mr-2" >
 
-                 Rating:
-                <br>
-                <input type="text" id="movieRating" name="rating">
-                <br>
-                <button type="submit" id="submit" class="d-inline-block">Submit</button>
+        <div class="row addMovieBkg mb-3">
+            <form id="addMovieForm" class="d-inline-block col-7 pl-5">
+                <div class="mb-3">
+                    <div class="col-8">
+                        <h3>Add a New Movie</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <span class="white">Title:</span>
+                    <br>
+                    <input type="text" id="movieTitle" name="movieTitle" class="mx-2">
+
+                    <span class="white">Rating:</span>
+                    <br>
+                    <input type="text" id="movieRating" name="rating" class="mx-2">
+                    <br>
+                    <button type="submit" id="submit" class="d-inline-block btn-sm">Submit</button>
                 </div>
                 <br>
                 <br>
             </form>
-            <div class="row d-inline-block">
-                <div class="">
-                    <label for="editExistingMovie">Would you like to edit an existing movie?</label>
-                    <button id="editExistingMovie">Yes</button>
+            <div class="row d-inline-block ml-auto pr-5">
+                <div class="editOption">
+                    <label class="white pb-2 mr-1" for="editExistingMovie">Edit/View movie details in your collection</label>
+                    <button id="editExistingMovie" class="btn-sm">Yes</button>
                 </div>
-                <form id="editMovieForm" class="row ">
+                <form id="editMovieForm" class="row">
                     <br>
-                    Select Movie:
-                    <select id="movieSelector">
-
-                    </select>
-                    <button id="edit">Edit</button>
+                    <span class="white">Select Movie:</span>
+                    <select id="movieSelector"></select>
+                    <button id="edit" class="btn-sm">Edit</button>
                     <br>
                     <br>
                 </form>
-                <div id="updateMovieDiv"></div>
-            </div>
-        </div>
 
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="movieContainer d-inline-block col-4">
-                <div class="card" style="width: 100%;">
-                    <div class="card-header">
-                        Favorite Movies
-                    </div>
-                    <ul class="list-group list-group-flush">
 
-                    </ul>
+                <div id="updateMovieDiv">
+
                 </div>
             </div>
-            <div class="movieInfoContainer d-inline-block col-7"></div>
         </div>
+
     </div>
 
+    <div class="container-fluid">
 
-
+        <div class="row mb-3">
+            <div class=" d-inline-block col-4 overflow-control">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header ulHeader sticky-top">
+                        <h5 class="text-center"> Saved Movie Collection</h5>
+                    </div>
+                    <ul class="list-group list-group-flush movieContainer"></ul>
+                </div>
+            </div>
+            <div class="movieInfoContainer d-inline-block col-6">
+                <div class="alert alert-light d-none" role="alert">
+                    You've just added another movie to your collection <a href="#" class="alert-link">click right here</a> to view movie details.
+                </div>
+                <div id="loading">
+                    <img id="loading-image" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..." />
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

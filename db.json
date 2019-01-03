@@ -2,13 +2,8 @@
   "movies": [
     {
       "title": "The Dark Knight Rises",
-      "rating": "5",
-      "id": 1
-    },
-    {
-      "title": "The Color Purple",
       "rating": "4",
-      "id": 3
+      "id": 1
     },
     {
       "title": "American Beauty",
@@ -22,23 +17,13 @@
     },
     {
       "title": "Iron Man",
-      "rating": "4",
+      "rating": "5",
       "id": 7
     },
     {
-      "title": "Charlie Brown Christmas",
-      "rating": "1",
-      "id": 8
-    },
-    {
       "title": "Cinderella",
-      "rating": "5",
+      "rating": "2",
       "id": 9
-    },
-    {
-      "title": "Children of the Corn",
-      "rating": "1",
-      "id": 11
     },
     {
       "title": "Charlies Angels",
@@ -46,9 +31,59 @@
       "id": 12
     },
     {
-      "title": "Eat, Pray, Love",
+      "title": "Monsters Inc",
       "rating": "5",
       "id": 13
+    },
+    {
+      "title": "Bad Boys",
+      "rating": "5",
+      "id": 16
+    },
+    {
+      "title": "Harry Potter",
+      "rating": "5",
+      "id": 17
+    },
+    {
+      "title": "The Fault in our Stars",
+      "rating": "2",
+      "id": 20
+    },
+    {
+      "title": "Zoolander",
+      "rating": "1",
+      "id": 23
+    },
+    {
+      "title": "Marley and Me",
+      "rating": "2",
+      "id": 24
+    },
+    {
+      "title": "Mad Max",
+      "rating": "2",
+      "id": 25
+    },
+    {
+      "title": "Deadpool",
+      "rating": "4",
+      "id": 26
+    },
+    {
+      "title": "The Incredibles",
+      "rating": "5",
+      "id": 31
+    },
+    {
+      "title": "Twilight",
+      "rating": "5",
+      "id": 32
+    },
+    {
+      "title": "Cars",
+      "rating": "5",
+      "id": 33
     }
   ]
 }

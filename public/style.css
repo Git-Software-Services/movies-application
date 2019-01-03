@@ -33,14 +33,14 @@ label {
 }
 
 .navbar-brand {
-    color: white !important;
+    color: #EEBF2F !important;
 }
 
 .navbar {
     background-color: #513F7A;
 }
 h3 {
-    color: #513F7A;
+    color: white;
 }
 
 h1, .subtitle {
@@ -51,9 +51,29 @@ h1, .subtitle {
     background-image: url("./netflix.jpg");
     repeat: no-repeat;
     background-size: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .container-fluid.img-banner {
     text-align:center;
     background: rgba(78,65,120,.6);
     margin:0;
+}
+
+.addMovieBkg {
+    background-color: #513F7A !important;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ulHeader {
+    background-color: rgba(225,190,64,.8); !important;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.white {
+    color: white;
+}
+
+.overflow-control {
+    height:450px;
+    overflow-y: scroll;
 }
