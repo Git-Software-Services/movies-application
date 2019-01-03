@@ -77,3 +77,7 @@ h1, .subtitle {
     height:450px;
     overflow-y: scroll;
 }
+
+.invisible {
+    display: none;
+}

@@ -21,7 +21,6 @@ $('#addUser').click(function(e){
     $("#helloThere").html((sayHello(newUserName)));
 });
 
-
 //Function to render movies in HTML
 var firstMovie = '';
 const renderMovies = () => {
@@ -79,7 +78,6 @@ $("#submit").click((e) => {
     $("#addMovieForm").css("display", "none");
     $("#helloThere").html("");
     $(".movieContainer").html("");
-    $('div>.alert').removeClass('d-none');
 });
 
 
@@ -196,6 +194,7 @@ const deleteMovie =(deleteMovieId) => {
 
 // Function that adds movie info to HTML
 const addMovieInfo = (movieBeingEdited) => {
+    console.log(movieBeingEdited);
     const API_TOKEN = '909446a614e303473b8ce209449992d9';
     var imgUrl = '';
     var replacedMovie = movieBeingEdited.split(' ').join('+');
@@ -217,5 +216,3 @@ const addMovieInfo = (movieBeingEdited) => {
                 $('.movieInfoContainer').append(`<img src="${imgUrl}" class="img-thumbnail float-right">`);
             });
 };
-
-
