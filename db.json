@@ -2,128 +2,28 @@
   "movies": [
     {
       "title": "The Dark Knight Rises",
-      "rating": "4",
+      "rating": "5",
       "id": 1
     },
     {
       "title": "American Beauty",
       "rating": "5",
-      "id": 4
+      "id": 2
     },
     {
       "title": "Iron Man",
       "rating": "5",
-      "id": 7
+      "id": 3
     },
     {
       "title": "Monsters Inc.",
       "rating": "5",
-      "id": 13
+      "id": 4
     },
     {
-      "title": "Bad Boys",
-      "rating": "5",
-      "id": 16
-    },
-    {
-      "title": "Harry Potter",
-      "rating": "5",
-      "id": 17
-    },
-    {
-      "title": "Zoolander",
-      "rating": "1",
-      "id": 23
-    },
-    {
-      "title": "Mad Max",
-      "rating": "2",
-      "id": 25
-    },
-    {
-      "title": "Deadpool",
-      "rating": "4",
-      "id": 26
-    },
-    {
-      "title": "The Incredibles",
-      "rating": "5",
-      "id": 31
-    },
-    {
-      "title": "Children of Men",
-      "rating": "4",
-      "id": 34
-    },
-    {
-      "title": "Cars",
-      "rating": "5",
-      "id": 36
-    },
-    {
-      "title": "Twilight",
-      "rating": "5",
-      "id": 37
-    },
-    {
-      "title": "Mrs Doubtfire",
-      "rating": "5",
-      "id": 39
-    },
-    {
-      "title": "Sleepless in Seattle",
-      "rating": "2",
-      "id": 40
-    },
-    {
-      "title": "Fifty Shades of Grey",
-      "rating": "1",
-      "id": 41
-    },
-    {
-      "title": "Mechanic",
-      "rating": "2",
-      "id": 42
-    },
-    {
-      "title": "Pets",
-      "rating": "2",
-      "id": 43
-    },
-    {
-      "title": "King Kong",
-      "rating": "2",
-      "id": 44
-    },
-    {
-      "title": "Planet of the Apes",
+      "title": "Rampage",
       "rating": "3",
-      "id": 45
-    },
-    {
-      "title": "War of the Worlds",
-      "rating": "5",
-      "id": 46
-    },
-    {
-      "title": "Mr and Mrs Smith",
-      "rating": "5",
-      "id": 48
-    },
-    {
-      "title": "Django",
-      "rating": "4",
-      "id": 49
-    },
-    {
-      "title": "Inception",
-      "rating": "5",
-      "id": 50
-    },
-    {
-      "title": "Sleeping Beauty",
-      "rating": "1",
-      "id": 52
+      "id": 5
     }
   ]
 }

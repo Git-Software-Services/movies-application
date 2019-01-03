@@ -74,8 +74,9 @@ h1, .subtitle {
 }
 
 .overflow-control {
-    height:450px;
+    height:100%;
     overflow-y: scroll;
+    /*width: 100%;*/
 }
 
 .invisible {

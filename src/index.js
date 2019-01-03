@@ -21,24 +21,22 @@ $('#addUser').click(function(e){
     $("#helloThere").html((sayHello(newUserName)));
 });
 
+
 //Function to render movies in HTML
-var firstMovie = '';
 const renderMovies = () => {
     $(".movieContainer").html("");
     getMovies().then((movies) => {
-        firstMovie = movies[0].title;
-        console.log(firstMovie);
         $("#movieTitle").val("");
         $("#movieRating").val("");
         $("#loading").css("display", "none");
         $("#addMovieForm").css("display", "block");
         $("#helloThere").html((sayHello("... (Enter a username)")));
-            // $(".movieInfoContainer").html((addMovieInfo(firstMovie)));
         movies.forEach(({title, rating, id}) => {
             $(".movieContainer").append(`<li class="list-group-item">
 <button type="button" value="X" class="deleteButton btn btn-outline-danger" id="${id}"></button>
 ${title} - rating: ${rating}
-</li>`);
+</li>`)
+    addMovieInfo(title);
         });
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.')
@@ -164,6 +162,7 @@ const editMovie =(movieBeingEdited, movieRating, movieId) => {
         .then(renderMovies);
 };
 
+
 //Click function to delete movies
 $(document).on("click", ".deleteButton", function (e){
     e.preventDefault();
@@ -192,8 +191,11 @@ const deleteMovie =(deleteMovieId) => {
 };
 
 
-// Function that adds movie info to HTML
+var html= "";
+
+// Function that adds movie images and info to HTML
 const addMovieInfo = (movieBeingEdited) => {
+    $(".movieInfoContainer").html("");
     console.log(movieBeingEdited);
     const API_TOKEN = '909446a614e303473b8ce209449992d9';
     var imgUrl = '';
@@ -207,12 +209,30 @@ const addMovieInfo = (movieBeingEdited) => {
             var movieImg = data.results[0].poster_path;
             var movieOverview = data.results[0].overview;
             var movieName = data.results[0].original_title;
-            $('.movieInfoContainer').html(`<p> ${movieName}: <br><br> ${movieOverview}</p>`);
+
+            var newData = "<div class='card'>" +
+            "<img id='newMovieSrc' src=''" +
+           "class='card-img-bottom' alt='...'>" +
+            "<div class='card-body'>" +
+            "<h5 class='card-title'>" +
+            movieName +
+            "</h5>" +
+            "<p class='card-text' id='movieOverview'>" +
+            movieOverview +
+            "</p>" +
+            "<p class='card-text'><small class='text-muted'>" +
+            // rating +
+            "</small></p>" +
+            "</div>" +
+            "</div>";
+
             imgUrl = `https://image.tmdb.org/t/p/w500${movieImg}`;
-    console.log(movieImg);
+            html = '' + newData + '';
+                $(".movieInfoContainer").prepend(html);
         });
-        fetch(imgUrl)
-            .then(function(movieImg){
-                $('.movieInfoContainer').append(`<img src="${imgUrl}" class="img-thumbnail float-right">`);
+    fetch(imgUrl)
+        .then(function(movieImg, moveOverview, movieName){
+            // console.log(movieOverview);
+                $("#newMovieSrc" ).attr( "src", imgUrl );
             });
 };
