@@ -1,29 +1,54 @@
 {
   "movies": [
     {
-      "title": "The Dark Knight Rises",
-      "rating": "5",
-      "id": 1
-    },
-    {
       "title": "American Beauty",
       "rating": "5",
       "id": 2
     },
     {
-      "title": "Iron Man",
-      "rating": "5",
-      "id": 3
+      "title": "Deadpool",
+      "rating": "4",
+      "id": 6
     },
     {
-      "title": "Monsters Inc.",
+      "title": "Cars",
       "rating": "5",
-      "id": 4
+      "id": 7
     },
     {
-      "title": "Rampage",
+      "title": "The Fault in our Stars",
+      "rating": "1",
+      "id": 9
+    },
+    {
+      "title": "Cinderella",
+      "rating": "2",
+      "id": 10
+    },
+    {
+      "title": "War of the Worlds",
+      "rating": "5",
+      "id": 11
+    },
+    {
+      "title": "The Italian Job",
       "rating": "3",
-      "id": 5
+      "id": 12
+    },
+    {
+      "title": "Bad Boys",
+      "rating": "5",
+      "id": 13
+    },
+    {
+      "title": "Black Panther",
+      "rating": "5",
+      "id": 14
+    },
+    {
+      "title": "The Lion King",
+      "rating": "5",
+      "id": 15
     }
   ]
 }

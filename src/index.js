@@ -7,14 +7,12 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from "jquery";
 import sayHello from './hello';
-console.log(sayHello("yo!"));
-
 /**
  * require style imports
  */
 import {getMovies} from './api.js';
 
-//Add username to jumbotron
+//Add username to jumbotron////////////////////////////////////////////////////////////////////////////////////////////
 $('#addUser').click(function(e){
     e.preventDefault();
     var newUserName = $("#userNameInput").val();
@@ -22,7 +20,7 @@ $('#addUser').click(function(e){
 });
 
 
-//Function to render movies in HTML
+//Function to render movies in HTML//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const renderMovies = () => {
     $(".movieContainer").html("");
     getMovies().then((movies) => {
@@ -30,7 +28,7 @@ const renderMovies = () => {
         $("#movieRating").val("");
         $("#loading").css("display", "none");
         $("#addMovieForm").css("display", "block");
-        $("#helloThere").html((sayHello("... (Enter a username)")));
+        $("#helloThere").html((sayHello("Random User")));
         movies.forEach(({title, rating, id}) => {
             $(".movieContainer").append(`<li class="list-group-item">
 <button type="button" value="X" class="deleteButton btn btn-outline-danger" id="${id}"></button>
@@ -46,7 +44,7 @@ ${title} - rating: ${rating}
 renderMovies()
 
 
-// Function that adds movies to database and HTML
+// Function that adds movies to database and HTML//////////////////////////////////////////////////////////////////////
 const addMovie =(movieTitle, movieRating) => {
     const movieAdded = {title: movieTitle, rating: movieRating};
     const url = '/api/movies';
@@ -59,14 +57,12 @@ const addMovie =(movieTitle, movieRating) => {
     };
     fetch(url, options)
         .then(renderMovies)
-    // getMovies().then((movies) => {
-    // $('.movieInfoContainer').html("");
         $('.movieInfoContainer').html((addMovieInfo(movieTitle)));
     // });
 };
 
 
-//Click function to add movies to database and HTML
+//Click function to add movies to database and HTML/////////////////////////////////////////////////////////////////////
 $("#submit").click((e) => {
     e.preventDefault();
     var movieTitle = $("#movieTitle").val();
@@ -79,7 +75,7 @@ $("#submit").click((e) => {
 });
 
 
-// Click function that creates the dropdown selection list of movies from the database
+// Click function that creates the dropdown selection list of movies from the database//////////////////////////////////
 $("#editExistingMovie").click(function (e) {
     e.preventDefault();
     getMovies().then((movies) => {
@@ -92,31 +88,26 @@ $("#editExistingMovie").click(function (e) {
     });
 
 
-    // Click function that displays form of editable data for selected movie on click
+    // Click function that displays form of editable data for selected movie on click///////////////////////////////////
     var movieBeingEdited = "";
     var movieRating = "";
     var movieId = "";
     $("#edit").click(function (e){
         e.preventDefault();
-        // $('html, body').animate({scrollTop: $(document).height()}, 'slow');
         getMovies().then((movies) => {
             movieBeingEdited = $("#movieSelector :selected").text();
         $('.movieInfoContainer').html((addMovieInfo(movieBeingEdited)));
-
-            // addMovieInfo(movieBeingEdited);
-
-            $("#updateMovieDiv").html("<span class='white'>Title:</span>" +
+            $("#updateMovieDiv").html("<span class=\"white\">Title:</span>" +
                 "    <input type=\"text\" id=\"updateMovieTitle\" name=\"updateMovieTitle\">" +
-                "    <span class='white'>Rating:</span>" +
+                "    <span class=\"white\">Rating:</span>" +
                 "    <input type=\"text\" id=\"updateMovieRating\" name=\"updateMovieRating\">" +
                 "    <button type=\"submit\" id=\"update\" class=\"btn-sm\">Update</button>");
 
-
-            //Prefills the edit input with selected movie
+            //Prefills the edit input with selected movie///////////////////////////////////////////////////////////////
             $("#updateMovieTitle").val(movieBeingEdited);
             $("#editMovieForm").css("display", "none");
 
-            //Prefills the edit input with selected movie rating
+            //Prefills the edit input with selected movie rating////////////////////////////////////////////////////////
             for (var i=0; i < movies.length; i++){
                 if (movies[i].title === movieBeingEdited) {
                     movieRating = movies[i].rating;
@@ -127,7 +118,7 @@ $("#editExistingMovie").click(function (e) {
     });
 
 
-    //Click function to update edited movies
+    //Click function to update edited movies///////////////////////////////////////////////////////////////////////////
     $(document).on("click", "#update", function (){
         e.preventDefault();
         $('#updateMovieDiv').css('display', 'none');
@@ -147,7 +138,7 @@ $("#editExistingMovie").click(function (e) {
 });
 
 
-// add edited movie data to database and HTML
+// add edited movie data to database and HTML////////////////////////////////////////////////////////////////////////////////////////////////
 const editMovie =(movieBeingEdited, movieRating, movieId) => {
     const movieEdited = {title: movieBeingEdited, rating: movieRating};
     const url = `/api/movies/${movieId}`;
@@ -163,7 +154,7 @@ const editMovie =(movieBeingEdited, movieRating, movieId) => {
 };
 
 
-//Click function to delete movies
+//Click function to delete movies////////////////////////////////////////////////////////////////////////////////////////////////
 $(document).on("click", ".deleteButton", function (e){
     e.preventDefault();
     getMovies().then((movies) => {
@@ -177,7 +168,7 @@ $(document).on("click", ".deleteButton", function (e){
 });
 
 
-// Delete movie function
+// Delete movie function////////////////////////////////////////////////////////////////////////////////////////////////
 const deleteMovie =(deleteMovieId) => {
     let url = `/api/movies/${deleteMovieId}`;
     const options = {
@@ -193,7 +184,8 @@ const deleteMovie =(deleteMovieId) => {
 
 var html= "";
 
-// Function that adds movie images and info to HTML
+
+// Function that adds movie images and info to HTML/////////////////////////////////////////////////////////////////////
 const addMovieInfo = (movieBeingEdited) => {
     $(".movieInfoContainer").html("");
     console.log(movieBeingEdited);
@@ -205,34 +197,40 @@ const addMovieInfo = (movieBeingEdited) => {
     fetch(url)
         .then((response) => response.json())
         .then(function(data){
-            console.log(data);
+            // console.log(data);
             var movieImg = data.results[0].poster_path;
             var movieOverview = data.results[0].overview;
             var movieName = data.results[0].original_title;
+            var releaseDate = data.results[0].release_date;
+            imgUrl = `https://image.tmdb.org/t/p/w500${movieImg}`;
 
-            var newData = "<div class='card'>" +
+
+            var newData = "<div class='card view view-tenth' >" +
             "<img id='newMovieSrc' src=''" +
-           "class='card-img-bottom' alt='...'>" +
-            "<div class='card-body'>" +
+           "class='card-img-bottom alt='...'>" +
+            "<div class='card-body mask'>" +
             "<h5 class='card-title'>" +
             movieName +
             "</h5>" +
-            "<p class='card-text' id='movieOverview'>" +
+            "<p class='card-text overflow-control' id='movieOverview'><span>" +
             movieOverview +
-            "</p>" +
-            "<p class='card-text'><small class='text-muted'>" +
+            "</span><a href=''></a></p>" +
+            "<p class='card-text overflow-control' ><small class='text-muted'>" +
             // rating +
             "</small></p>" +
             "</div>" +
-            "</div>";
+            "<div class=\"card-footer\">\n" +
+                "      <small class=\"text-muted\">" +
+                "Released:" +
+                releaseDate +
+                "</small>\n" +
+                "    </div></div>";
 
-            imgUrl = `https://image.tmdb.org/t/p/w500${movieImg}`;
             html = '' + newData + '';
-                $(".movieInfoContainer").prepend(html);
         });
     fetch(imgUrl)
-        .then(function(movieImg, moveOverview, movieName){
-            // console.log(movieOverview);
+        .then(function(){
+                $(".movieInfoContainer").prepend(html);
                 $("#newMovieSrc" ).attr( "src", imgUrl );
             });
 };

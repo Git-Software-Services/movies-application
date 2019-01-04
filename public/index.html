@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>My Application</title>
+    <title>DandZee Movie Application</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-
+    <!--Nav-->
     <nav class="navbar navbar-dark">
-        <a class="navbar-brand">DandZee Movie Application</a>
+        <a class="navbar-brand">Random Movie Application</a>
         <form class="form-inline">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -21,22 +21,25 @@
         </form>
     </nav>
 
+    <!--Header img Div-->
     <div class="jumbotron jumbotron-fluid">
         <div class="container-fluid img-banner">
             <h1 id="helloThere" class="display-4"></h1>
-            <p class="lead subtitle">Rate your personalized collection of movie favorites and share your collection with your social network.</p>
+            <p class="lead subtitle">Rate your personalized collection of Random movies and share your collection with your social network.</p>
         </div>
     </div>
-    <div class="container-fluid">
 
-        <div class="row addMovieBkg mb-3">
+    <div class="container-fluid">
+        <!--Add movie Header Div-->
+        <div class="row d-flex flex-row addMovieBkg mb-3">
             <form id="addMovieForm" class="d-inline-block col-6 pl-5">
                 <div class="mb-3">
                     <div class="">
-                        <h3>Add a New Movie</h3>
+                        <h3>Add another Random Movie</h3>
                     </div>
                 </div>
 
+                <!--Add movie Input Div-->
                 <div class="row">
                     <span class="white">Title:</span>
                     <br>
@@ -51,112 +54,55 @@
                 <br>
                 <br>
             </form>
+
+            <!--Edit movie Div-->
             <div class="row d-inline-block ml-auto pr-5">
                 <div class="editOption">
-                    <label class="white pb-2 mr-1" for="editExistingMovie">Edit/View movie details in your collection</label>
+                    <label class="white pb-2 mr-1" for="editExistingMovie">Edit/View movie details in your random collection</label>
                     <button id="editExistingMovie" class="btn-sm">Yes</button>
                 </div>
                 <form id="editMovieForm" class="row">
                     <br>
                     <span class="white">Select Movie:</span>
-                    <select id="movieSelector"></select>
+                    <select id="movieSelector" class="white"></select>
                     <button id="edit" class="btn-sm">Edit</button>
                     <br>
                     <br>
                 </form>
 
-
-                <div id="updateMovieDiv">
-
-                </div>
+                <!--Hidden Div for editing movie selection-->
+                <div id="updateMovieDiv"></div>
             </div>
         </div>
-
     </div>
 
     <div class="container-fluid ">
-
-        <div class="row mb-3">
-            <div class=" d-inline-block d-flex col-3 overflow-control pl-0">
-                <div class="card">
+        <div class="row d-flex flex-row">
+        <!--Div for saved movie collection-->
+            <div class=" d-inline-block col-3 pl-0">
+                <div class="card mt-3">
                     <div class="card-header ulHeader sticky-top">
-                        <h5 class="text-center"> Saved Movie Collection</h5>
+                        <h5 class="text-center"> Random Movie Collection</h5>
                     </div>
-                    <ul class="list-group list-group-flush movieContainer"></ul>
+                    <ul class="text-center list-group list-group-flush movieContainer"></ul>
                 </div>
             </div>
-            <div class=" movieInfoContainer d-inline-block col-9 container-fluid m-0">
+
+            <!--Loader image-->
+            <div class="d-inline-block col-9 container-fluid">
                 <div id="loading">
                     <img id="loading-image" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..." />
                 </div>
-
-                <div class="container-fluid">
-                    <div class="card-deck">
-                        <!--<div class="card ">-->
-                            <!--<img src="./netflix.jpg" class="card-img-bottom" alt="...">-->
-                            <!--<div class="card-body">-->
-                                <!--<h5 class="card-title">Card title</h5>-->
-                                <!--<p class="card-text">This is a longer card with supporting text.</p>-->
-                                <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="card">-->
-                            <!--<img src="./netflix.jpg" class="card-img-top" alt="...">-->
-                            <!--<div class="card-body">-->
-                                <!--<h5 class="card-title">Card title</h5>-->
-                                <!--<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>-->
-                                <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="card">-->
-                            <!--<img src="./netflix.jpg" class="card-img-top" alt="...">-->
-                            <!--<div class="card-body">-->
-                                <!--<h5 class="card-title">Card title</h5>-->
-                                <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>-->
-                                <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-    <!--<div class="card-deck ">-->
-                        <!--<div class="card">-->
-                            <!--<img src="./netflix.jpg" class="card-img-bottom" alt="...">-->
-                            <!--<div class="card-body">-->
-                                <!--<h5 class="card-title">Card title</h5>-->
-                                <!--<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                                <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="card">-->
-                            <!--<img src="./netflix.jpg" class="card-img-top" alt="...">-->
-                            <!--<div class="card-body">-->
-                                <!--<h5 class="card-title">Card title</h5>-->
-                                <!--<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>-->
-                                <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="card">-->
-                            <!--<img src="./netflix.jpg" class="card-img-top" alt="...">-->
-                            <!--<div class="card-body">-->
-                                <!--<h5 class="card-title">Card title</h5>-->
-                                <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>-->
-                                <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    </div>
-                </div>
+                <!--Div container for movie images-->
+                <div id="all" class="movieInfoContainer card-group"></div>
             </div>
         </div>
     </div>
-
-
-
 
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>-->
     <script src="/main.js"></script>
 </body>
 </html>
