@@ -15,7 +15,8 @@ body {
 }
 
 .deleteButton {
-    margin: 10px;
+    margin: 5px;
+    font-size: 10px;
 }
 label {
     padding-top: 56px;

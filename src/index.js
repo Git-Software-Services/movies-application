@@ -22,7 +22,9 @@ $('#addUser').click(function(e){
 
 //Function to render movies in HTML//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const renderMovies = () => {
+    // debugger;
     $(".movieContainer").html("");
+    // $(".movieInfoContainer").html("");
     getMovies().then((movies) => {
         $("#movieTitle").val("");
         $("#movieRating").val("");
@@ -31,17 +33,17 @@ const renderMovies = () => {
         $("#helloThere").html((sayHello("Random User")));
         movies.forEach(({title, rating, id}) => {
             $(".movieContainer").append(`<li class="list-group-item">
-<button type="button" value="X" class="deleteButton btn btn-outline-danger" id="${id}"></button>
-${title} - rating: ${rating}
+<button type="button" value="X" class="deleteButton xs-btn btn-outline-danger" id="${id}">Delete</button>
+${title} <span class="float-right"> <strong>Rating:</strong> ${rating}</span>
 </li>`)
-    addMovieInfo(title);
+    // addMovieInfo(title);
         });
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.')
         console.log(error);
     });
 };
-renderMovies()
+
 
 
 // Function that adds movies to database and HTML//////////////////////////////////////////////////////////////////////
@@ -56,8 +58,8 @@ const addMovie =(movieTitle, movieRating) => {
         body: JSON.stringify(movieAdded),
     };
     fetch(url, options)
-        .then(renderMovies)
-        $('.movieInfoContainer').html((addMovieInfo(movieTitle)));
+        .then(arrangeAllMovieInfo)
+        // $('.movieInfoContainer').html((addMovieInfo(movieTitle)));
     // });
 };
 
@@ -68,10 +70,11 @@ $("#submit").click((e) => {
     var movieTitle = $("#movieTitle").val();
     var movieRating = $("#movieRating").val();
     addMovie(movieTitle, movieRating);
+    // arrangeAllMovieInfo();
     $("#loading").css("display", "block");
     $("#addMovieForm").css("display", "none");
     $("#helloThere").html("");
-    $(".movieContainer").html("");
+    // $(".movieContainer").html("");
 });
 
 
@@ -96,7 +99,7 @@ $("#editExistingMovie").click(function (e) {
         e.preventDefault();
         getMovies().then((movies) => {
             movieBeingEdited = $("#movieSelector :selected").text();
-        $('.movieInfoContainer').html((addMovieInfo(movieBeingEdited)));
+        // $('.movieInfoContainer').html((addMovieInfo(movieBeingEdited)));
             $("#updateMovieDiv").html("<span class=\"white\">Title:</span>" +
                 "    <input type=\"text\" id=\"updateMovieTitle\" name=\"updateMovieTitle\">" +
                 "    <span class=\"white\">Rating:</span>" +
@@ -131,6 +134,7 @@ $("#editExistingMovie").click(function (e) {
                     movies[i].rating = movieRating;
                     movieId = movies[i].id;
                     editMovie(movieBeingEdited, movieRating, movieId);
+                    // addMovieInfo(movieBeingEdited);
                 };
             };
         });
@@ -178,7 +182,7 @@ const deleteMovie =(deleteMovieId) => {
         },
     };
     fetch(url, options)
-        .then(renderMovies);
+        .then(arrangeAllMovieInfo);
 };
 
 
@@ -186,51 +190,79 @@ var html= "";
 
 
 // Function that adds movie images and info to HTML/////////////////////////////////////////////////////////////////////
-const addMovieInfo = (movieBeingEdited) => {
-    $(".movieInfoContainer").html("");
-    console.log(movieBeingEdited);
+const addMovieInfo = (movie) => {
+    // $(".movieInfoContainer").html("");
+    console.log(movie);
     const API_TOKEN = '909446a614e303473b8ce209449992d9';
     var imgUrl = '';
-    var replacedMovie = movieBeingEdited.split(' ').join('+');
+    var replacedMovie = movie.split(' ').join('+');
     var url = `https://api.themoviedb.org/3/search/movie?api_key=${API_TOKEN}&query=${replacedMovie}`;
 
-    fetch(url)
+    const getMovieUrl = fetch(url)
         .then((response) => response.json())
         .then(function(data){
             // console.log(data);
-            var movieImg = data.results[0].poster_path;
-            var movieOverview = data.results[0].overview;
-            var movieName = data.results[0].original_title;
-            var releaseDate = data.results[0].release_date;
+            var movieImg = "";
+            var movieOverview = "";
+            var movieName = "";
+            var releaseDate = "";
+            var newData = "";
+            movieImg = data.results[0].poster_path;
+            movieOverview = data.results[0].overview;
+            movieName = data.results[0].original_title;
+            releaseDate = data.results[0].release_date;
             imgUrl = `https://image.tmdb.org/t/p/w500${movieImg}`;
+            console.log(movieName);
+            console.log(movie);
 
+                newData = "<div class='card view view-tenth' >" +
+                    "<img id='newMovieSrc' src=''" +
+                    "class='card-img-bottom alt='...'>" +
+                    "<div class='card-body mask'>" +
+                    "<h5 class='card-title'>" +
+                    movieName +
+                    "</h5>" +
+                    "<p class='card-text overflow-control' id='movieOverview'><span>" +
+                    movieOverview +
+                    "</span><a href=''></a></p>" +
+                    "<p class='card-text overflow-control' ><small class='text-muted'>" +
+                    // rating +
+                    "</small></p>" +
+                    "</div>" +
+                    "<div class=\"card-footer\">\n" +
+                    "      <small class=\"text-muted\">" +
+                    "Released:" +
+                    releaseDate +
+                    "</small>\n" +
+                    "    </div></div>";
 
-            var newData = "<div class='card view view-tenth' >" +
-            "<img id='newMovieSrc' src=''" +
-           "class='card-img-bottom alt='...'>" +
-            "<div class='card-body mask'>" +
-            "<h5 class='card-title'>" +
-            movieName +
-            "</h5>" +
-            "<p class='card-text overflow-control' id='movieOverview'><span>" +
-            movieOverview +
-            "</span><a href=''></a></p>" +
-            "<p class='card-text overflow-control' ><small class='text-muted'>" +
-            // rating +
-            "</small></p>" +
-            "</div>" +
-            "<div class=\"card-footer\">\n" +
-                "      <small class=\"text-muted\">" +
-                "Released:" +
-                releaseDate +
-                "</small>\n" +
-                "    </div></div>";
-
-            html = '' + newData + '';
+                html = '' + newData + '';
         });
-    fetch(imgUrl)
-        .then(function(){
-                $(".movieInfoContainer").prepend(html);
-                $("#newMovieSrc" ).attr( "src", imgUrl );
+
+        const getMovieImageUrl = fetch(imgUrl)
+
+            Promise.all([getMovieUrl, getMovieImageUrl]).then(function () {
+                $("#newMovieSrc").attr("src", imgUrl);
+                // $(".movieInfoContainer").prepend(html);
+                $(html).prependTo(".movieInfoContainer");
             });
 };
+
+
+//Function to display movie information in both Divs containing movie details
+function arrangeAllMovieInfo() {
+    renderMovies();
+    $(".movieInfoContainer").html("");
+    getMovies().then((movies) => {
+        for (var i = 0; i < movies.length; i++) {
+            var movie = movies[i].title;
+            console.log(movie);
+            $(".movieInfoContainer").html("");
+            addMovieInfo(movie);
+        };
+
+    });
+}
+
+//Function call when page loads to show movie details on page
+arrangeAllMovieInfo()

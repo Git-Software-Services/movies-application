@@ -1,64 +1,44 @@
 {
   "movies": [
     {
-      "title": "American Beauty",
+      "title": "World War Z",
       "rating": "5",
-      "id": 2
-    },
-    {
-      "title": "Deadpool",
-      "rating": "4",
-      "id": 6
-    },
-    {
-      "title": "Cars",
-      "rating": "5",
-      "id": 7
-    },
-    {
-      "title": "The Fault in our Stars",
-      "rating": "1",
-      "id": 9
-    },
-    {
-      "title": "Cinderella",
-      "rating": "2",
-      "id": 10
+      "id": 1
     },
     {
       "title": "War of the Worlds",
       "rating": "5",
-      "id": 11
+      "id": 2
     },
     {
-      "title": "The Italian Job",
-      "rating": "3",
-      "id": 12
+      "title": "The Fault in Our Stars",
+      "rating": "2",
+      "id": 3
     },
     {
-      "title": "Bad Boys",
+      "title": "I am Legend",
       "rating": "5",
-      "id": 13
+      "id": 4
     },
     {
-      "title": "Black Panther",
+      "title": "Hitch",
       "rating": "5",
-      "id": 14
+      "id": 5
     },
     {
-      "title": "The Lion King",
-      "rating": "5",
-      "id": 15
-    },
-    {
-      "title": "Ray Charles",
+      "title": "Big",
       "rating": "4",
-      "id": 16
+      "id": 6
     },
     {
-      "title": "Batman Begins",
+      "title": "My Best Friends Wedding",
+      "rating": "3",
+      "id": 7
+    },
+    {
+      "title": "Just Wright",
       "rating": "5",
-      "id": 17
+      "id": 8
     }
   ]
 }
