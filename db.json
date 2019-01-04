@@ -49,6 +49,16 @@
       "title": "The Lion King",
       "rating": "5",
       "id": 15
+    },
+    {
+      "title": "Ray Charles",
+      "rating": "4",
+      "id": 16
+    },
+    {
+      "title": "Batman Begins",
+      "rating": "5",
+      "id": 17
     }
   ]
 }
