@@ -1,5 +1,3 @@
-
-
 /**
  * es6 modules and imports
  */
@@ -20,7 +18,7 @@ $('#addUser').click(function(e){
 });
 
 
-//Function to render movies in HTML//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Function to render movies in HTML////////////////////////////////////////////////////////////////////////////////////
 const renderMovies = () => {
     // debugger;
     $(".movieContainer").html("");
@@ -36,14 +34,13 @@ const renderMovies = () => {
 <button type="button" value="X" class="deleteButton xs-btn btn-outline-danger" id="${id}">Delete</button>
 ${title} <span class="float-right"> <strong>Rating:</strong> ${rating}</span>
 </li>`)
-    // addMovieInfo(title);
+            // addMovieInfo(title);
         });
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.')
         console.log(error);
     });
 };
-
 
 
 // Function that adds movies to database and HTML//////////////////////////////////////////////////////////////////////
@@ -59,8 +56,7 @@ const addMovie =(movieTitle, movieRating) => {
     };
     fetch(url, options)
         .then(arrangeAllMovieInfo)
-        // $('.movieInfoContainer').html((addMovieInfo(movieTitle)));
-    // });
+    // $('.movieInfoContainer').html((addMovieInfo(movieTitle)));
 };
 
 
@@ -99,7 +95,7 @@ $("#editExistingMovie").click(function (e) {
         e.preventDefault();
         getMovies().then((movies) => {
             movieBeingEdited = $("#movieSelector :selected").text();
-        // $('.movieInfoContainer').html((addMovieInfo(movieBeingEdited)));
+            // $('.movieInfoContainer').html((addMovieInfo(movieBeingEdited)));
             $("#updateMovieDiv").html("<span class=\"white\">Title:</span>" +
                 "    <input type=\"text\" id=\"updateMovieTitle\" name=\"updateMovieTitle\">" +
                 "    <span class=\"white\">Rating:</span>" +
@@ -142,7 +138,7 @@ $("#editExistingMovie").click(function (e) {
 });
 
 
-// add edited movie data to database and HTML////////////////////////////////////////////////////////////////////////////////////////////////
+// add edited movie data to database and HTML///////////////////////////////////////////////////////////////////////////
 const editMovie =(movieBeingEdited, movieRating, movieId) => {
     const movieEdited = {title: movieBeingEdited, rating: movieRating};
     const url = `/api/movies/${movieId}`;
@@ -158,12 +154,12 @@ const editMovie =(movieBeingEdited, movieRating, movieId) => {
 };
 
 
-//Click function to delete movies////////////////////////////////////////////////////////////////////////////////////////////////
+//Click function to delete movies///////////////////////////////////////////////////////////////////////////////////////
 $(document).on("click", ".deleteButton", function (e){
     e.preventDefault();
     getMovies().then((movies) => {
         for (var i=0; i < movies.length; i++){
-                var deleteMovieId = movies[i].id;
+            var deleteMovieId = movies[i].id;
             if ($(this).attr('id') === movies[i].id.toString()){
                 deleteMovie(deleteMovieId);
             };
@@ -198,15 +194,15 @@ const addMovieInfo = (movie) => {
     var replacedMovie = movie.split(' ').join('+');
     var url = `https://api.themoviedb.org/3/search/movie?api_key=${API_TOKEN}&query=${replacedMovie}`;
 
-    const getMovieUrl = fetch(url)
-        .then((response) => response.json())
-        .then(function(data){
-            // console.log(data);
             var movieImg = "";
             var movieOverview = "";
             var movieName = "";
             var releaseDate = "";
             var newData = "";
+    const getMovieUrl = fetch(url)
+        .then((response) => response.json())
+        .then(function(data){
+            // console.log(data);
             movieImg = data.results[0].poster_path;
             movieOverview = data.results[0].overview;
             movieName = data.results[0].original_title;
@@ -215,37 +211,23 @@ const addMovieInfo = (movie) => {
             console.log(movieName);
             console.log(movie);
 
-                newData = "<div class='card view view-tenth' >" +
-                    "<img id='newMovieSrc' src=''" +
-                    "class='card-img-bottom alt='...'>" +
-                    "<div class='card-body mask'>" +
-                    "<h5 class='card-title'>" +
-                    movieName +
-                    "</h5>" +
-                    "<p class='card-text overflow-control' id='movieOverview'><span>" +
-                    movieOverview +
-                    "</span><a href=''></a></p>" +
-                    "<p class='card-text overflow-control' ><small class='text-muted'>" +
-                    // rating +
-                    "</small></p>" +
-                    "</div>" +
-                    "<div class=\"card-footer\">\n" +
-                    "      <small class=\"text-muted\">" +
-                    "Released:" +
-                    releaseDate +
-                    "</small>\n" +
-                    "    </div></div>";
-
-                html = '' + newData + '';
         });
 
-        const getMovieImageUrl = fetch(imgUrl)
+    const getMovieImageUrl = fetch(imgUrl);
 
-            Promise.all([getMovieUrl, getMovieImageUrl]).then(function () {
-                $("#newMovieSrc").attr("src", imgUrl);
-                // $(".movieInfoContainer").prepend(html);
-                $(html).prependTo(".movieInfoContainer");
-            });
+    Promise.all([getMovieImageUrl, getMovieUrl]).then(function () {
+        $('#moveInfoContainer').html('');
+
+        newData = `<div class='card view view-tenth' ><img class='card-img-bottom' id= 'newMovieSrc' src=''><div class='card-body mask'><h5 class='card-title'>${movieName}</h5><p class='card-text overflow-control' id='movieOverview'><span>${movieOverview}</span><a href=''></a></p><p class='card-text overflow-control' ><small class='text-muted'></small></p></div><div class='card-footer'><small class='text-muted'>Released: ${releaseDate}</small></div>`;
+
+
+        html = newData;
+        // $('.newMovieSrc').attr('src', $('.newMovieSrc').attr('src').replace('', './netflix.jpg'));
+        // $(".movieInfoContainer").append(html);
+        $(html).prependTo(".movieInfoContainer");
+        $('#newMovieSrc').attr('src', imgUrl);
+
+    });
 };
 
 
@@ -255,14 +237,14 @@ function arrangeAllMovieInfo() {
     $(".movieInfoContainer").html("");
     getMovies().then((movies) => {
         for (var i = 0; i < movies.length; i++) {
+            // movies.reverse();
             var movie = movies[i].title;
             console.log(movie);
             $(".movieInfoContainer").html("");
             addMovieInfo(movie);
         };
-
     });
-}
+};
 
 //Function call when page loads to show movie details on page
 arrangeAllMovieInfo()

@@ -1,22 +1,22 @@
 {
   "movies": [
     {
-      "title": "World War Z",
+      "title": "The Lion King",
       "rating": "5",
       "id": 1
     },
     {
-      "title": "War of the Worlds",
-      "rating": "5",
+      "title": "Big",
+      "rating": "3",
       "id": 2
     },
     {
-      "title": "The Fault in Our Stars",
-      "rating": "2",
+      "title": "Training Day",
+      "rating": "5",
       "id": 3
     },
     {
-      "title": "I am Legend",
+      "title": "World War Z",
       "rating": "5",
       "id": 4
     },
@@ -26,18 +26,18 @@
       "id": 5
     },
     {
-      "title": "Big",
+      "title": "Bad Boys",
       "rating": "4",
       "id": 6
     },
     {
-      "title": "My Best Friends Wedding",
-      "rating": "3",
+      "title": "The Jungle Book",
+      "rating": "2",
       "id": 7
     },
     {
-      "title": "Just Wright",
-      "rating": "5",
+      "title": "Tomb Raider",
+      "rating": "3",
       "id": 8
     }
   ]
