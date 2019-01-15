@@ -18,23 +18,66 @@ body {
     margin: 5px;
     font-size: 10px;
 }
+
+.modal-backdrop {
+    opacity:0.85 !important;
+}
+
+.modal-body {
+    background: linear-gradient(to bottom right, rgba(116,42,255,.8) 0%, rgba(81,63,122,.9) 100%);
+    background: linear-gradient(to bottom right, rgba(116,42,255,.8) 0%, rgba(29,24,43,.9) 100%);
+    /*padding-top: -10px;*/
+    /*padding-bottom: -10px;*/
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*padding-left: 0;*/
+    /*padding-right: 0;*/
+}
+
+.link {
+    background-color: rgba(225,190,64,.8) !important;
+}
+.link:hover {
+    color: rgb(81,63,122) !important;
+}
+
 label {
     padding-top: 56px;
 }
 
 .navbar-brand {
     color: rgba(225,190,64,.8) !important;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2em;
 }
 
 .navbar {
-    background-color: #513F7A;
+    background: linear-gradient(to bottom right, rgba(116,42,255,.8) 0%, rgba(81,63,122,.9) 100%);
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
 }
+
+.movieTitleFont {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+h5, h6, p {
+    font-family: 'Fredericka the Great', cursive;
+    color: rgb(81,63,122);
+    /*color: rgb(81,63,122);*/
+    font-size: 1.3em;
+}
+
 h3 {
     color: white;
+    font-family: 'Prosto One', cursive;
 }
 
 h1, .subtitle {
     color: white;
+    font-family: 'Prosto One', cursive;
 }
 
 .jumbotron {
@@ -42,16 +85,21 @@ h1, .subtitle {
     repeat: no-repeat;
     background-size: 100%;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 .container-fluid.img-banner {
     text-align:center;
-    background: rgba(78,65,120,.6);
+    /*background: rgba(78,65,120,.6);*/
+    background: linear-gradient(to bottom right, rgba(116,42,255,.6) 0%, rgba(81,63,122,.6) 100%);
     margin:0;
 }
 
 .addMovieBkg {
-    background-color: #513F7A !important;
+    background: linear-gradient(to bottom right, rgba(116,42,255,.8) 0%, rgba(81,63,122,.9) 100%);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-bottom-right-radius: 200px;
+    border-bottom-left-radius: 10px;
 }
 
 .ulHeader {
@@ -82,6 +130,12 @@ h1, .subtitle {
     margin-bottom: 10px!important;
 }
 
+/* unvisited link */
+a:link, a:visited, a:hover, a:active {
+    color: rgba(116,42,255,.8);
+}
+
+
 /* borrowed css "www.jacobstone.co.uk"*/
 
 .view {
@@ -100,7 +154,8 @@ h1, .subtitle {
     position: absolute;
     overflow: hidden;
     top: 0;
-    left: 0
+    left: 0;
+    bottom: 2px;
 }
 
 .view img {
@@ -114,18 +169,18 @@ h1, .subtitle {
     text-align: center;
     position: relative;
     font-size: 17px;
-    font-family: Raleway, serif;
+    /*font-family: Raleway, serif;*/
     padding: 10px;
-    margin: 20px 0 0 0
+    /*margin: 20px 0 0 0*/
 }
 
 .view p {
-    font-family: Merriweather, serif;
-    font-style: italic;
+    /*font-family: Merriweather, serif;*/
+    /*font-style: italic;*/
     font-size: 14px;
     position: relative;
     color: #fff;
-    padding: 0px 20px 0px;
+    padding: 0px 10px 0px;
     text-align: center
 }
 
