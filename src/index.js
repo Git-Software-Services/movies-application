@@ -231,7 +231,7 @@ const addMovieInfo = (movie, movieArrayId, movieTrailerUrl) => {
         .then(function (data) {
             console.log(data);
             youTubeTrailer = data[1].videos.results[0].key;
-            var youtubeUrl= `http://youtube.com/embed/`;
+            var youtubeUrl= `https://youtube.com/embed/`;
             movieTrailerUrl = youtubeUrl + youTubeTrailer;
             postMovieInfo(movieArrayId, movieTrailerUrl);
         });

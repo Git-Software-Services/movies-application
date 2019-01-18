@@ -36,36 +36,39 @@
         <div class="row d-flex flex-row addMovieBkg mb-3">
             <form id="addMovieForm" class="d-inline-block col-6 pl-5" autocomplete="off">
                 <div class="mb-3">
-                    <div class="">
+                    <div class="d-none d-md-block d-xl-block">
+                        <h3>Add Random Movie</h3>
+                    </div>
+                    <div class="d-block d-md-none d-xl-none">
                         <h3>Add Random Movie</h3>
                     </div>
                 </div>
 
                 <!--Add movie Input Div-->
                 <div class="row">
-                    <span class="white">Title:</span>
-                    <br>
-                    <input type="text" id="movieTitle" name="movieTitle" class="mx-2">
+                <span class="white d-inline">Title:</span>
+                <br>
+                <input type="text" id="movieTitle" name="movieTitle" class="mx-2">
 
-                    <span class="white">Rating:</span>
-                    <br>
-                    <select id="movieRating" name="rating" class="mx-2">
-                        <option value="1 star">1 Star</option>
-                        <option value="2 stars">2 Stars</option>
-                        <option value="3 stars">3 Stars</option>
-                        <option value="4 stars">4 Stars</option>
-                        <option value="4 stars" selected="selected">5 Stars</option>
-                    </select>
-                    <br>
-                    <button type="submit" id="submit" class="d-inline-block btn-sm">Submit</button>
-                </div>
+                <span class="white d-inline">Rating:</span>
+                <br>
+                <select id="movieRating" name="rating" class="mx-2">
+                    <option value="1 star">1 Star</option>
+                    <option value="2 stars">2 Stars</option>
+                    <option value="3 stars">3 Stars</option>
+                    <option value="4 stars">4 Stars</option>
+                    <option value="4 stars" selected="selected">5 Stars</option>
+                </select>
+                <br>
+                <button type="submit" id="submit" class="d-inline-block btn-sm">Submit</button>
+            </div>
                 <br>
                 <br>
             </form>
 
             <!--Edit movie Div-->
             <div class="row d-inline-block ml-auto pr-5">
-                <div class="editOption">
+                <div class="editOption mr-3">
                     <label class="white pb-2 mr-1" for="editExistingMovie"><h4>Edit movie details in your Random collection</h4></label>
                     <button id="editExistingMovie" class="btn-sm">Yes</button>
                 </div>

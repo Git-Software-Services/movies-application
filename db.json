@@ -4,91 +4,91 @@
       "title": "The Lion King",
       "rating": "5",
       "id": 1,
-      "movieTrailer": "http://youtube.com/embed/4sj1MT05lAA"
+      "movieTrailer": "https://youtube.com/embed/4sj1MT05lAA"
     },
     {
       "title": "Training Day",
       "rating": "4 stars",
       "id": 3,
-      "movieTrailer": "http://youtube.com/embed/gKTVQPOH8ZA"
+      "movieTrailer": "https://youtube.com/embed/gKTVQPOH8ZA"
     },
     {
       "title": "World War Z",
       "rating": "5",
       "id": 4,
-      "movieTrailer": "http://youtube.com/embed/slfrrjPndV4"
+      "movieTrailer": "https://youtube.com/embed/slfrrjPndV4"
     },
     {
       "title": "Hitch",
       "rating": "5",
       "id": 5,
-      "movieTrailer": "http://youtube.com/embed/pYrrEUgnT6s"
+      "movieTrailer": "https://youtube.com/embed/pYrrEUgnT6s"
     },
     {
       "title": "Bad Boys",
       "rating": "4",
       "id": 6,
-      "movieTrailer": "http://youtube.com/embed/ZYxO2ODedhA"
+      "movieTrailer": "https://youtube.com/embed/ZYxO2ODedhA"
     },
     {
       "title": "Tomb Raider",
       "rating": "3",
       "id": 8,
-      "movieTrailer": "http://youtube.com/embed/8ndhidEmUbI"
+      "movieTrailer": "https://youtube.com/embed/8ndhidEmUbI"
     },
     {
       "title": "This Is It",
       "rating": "4",
       "id": 11,
-      "movieTrailer": "http://youtube.com/embed/zUniG6F_RzY"
+      "movieTrailer": "https://youtube.com/embed/zUniG6F_RzY"
     },
     {
       "title": "The Big Short",
       "rating": "4 stars",
       "id": 12,
-      "movieTrailer": "http://youtube.com/embed/vgqG3ITMv1Q"
+      "movieTrailer": "https://youtube.com/embed/vgqG3ITMv1Q"
     },
     {
       "title": "Peppermint",
       "rating": "1 star",
       "id": 14,
-      "movieTrailer": "http://youtube.com/embed/sdL70wkf_H0"
+      "movieTrailer": "https://youtube.com/embed/sdL70wkf_H0"
     },
     {
       "title": "Black Panther",
       "rating": "4 stars",
       "id": 15,
-      "movieTrailer": "http://youtube.com/embed/xjDjIWPwcPU"
+      "movieTrailer": "https://youtube.com/embed/xjDjIWPwcPU"
     },
     {
       "title": "Shrek",
       "rating": "3 stars",
       "id": 16,
-      "movieTrailer": "http://youtube.com/embed/W37DlG1i61s"
+      "movieTrailer": "https://youtube.com/embed/W37DlG1i61s"
     },
     {
       "title": "Deadpool",
       "rating": "3 stars",
       "id": 17,
-      "movieTrailer": "http://youtube.com/embed/FyKWUTwSYAs"
+      "movieTrailer": "https://youtube.com/embed/FyKWUTwSYAs"
     },
     {
       "title": "The Incredibles",
       "rating": "4 stars",
       "id": 18,
-      "movieTrailer": "http://youtube.com/embed/ECJNnWRM_xA"
+      "movieTrailer": "https://youtube.com/embed/ECJNnWRM_xA"
     },
     {
       "title": "Mad Max",
       "rating": "2 stars",
       "id": 19,
-      "movieTrailer": "http://youtube.com/embed/akX3Is3qBpw"
+      "movieTrailer": "https://youtube.com/embed/akX3Is3qBpw"
     },
     {
       "title": "Love and Basketball",
       "rating": "4 stars",
       "id": 20,
-      "movieTrailer": "http://youtube.com/embed/Ur83i6_BjbE"
+      "movieTrailer": "https://youtube.com/embed/Ur83i6_BjbE"
     }
   ]
 }
